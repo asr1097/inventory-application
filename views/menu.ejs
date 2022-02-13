@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("head", {title: "My Fast Food | Menu"}) %>
+    </head>
+    <body>
+        <main>
+            <% categories.forEach(function(cat) { %>
+                <a href="<%= cat.url %>" > 
+                    <article>
+                        <h4><%= cat.name %></h4>
+                        <p><%= cat.description %></p>
+                    </article>
+                </a>
+            <% }); %>
+            <a href="/menu/create">Create new category</a>
+        </main>
+    </body>
+</html>

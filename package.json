@@ -1,0 +1,25 @@
+{
+  "name": "inventory-application",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "DEBUG=inventory-application:* nodemon ./bin/www"
+  },
+  "dependencies": {
+    "async": "^3.2.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-validator": "^6.14.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.2.1",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "kill-port": "^1.6.1",
+    "nodemon": "^2.0.15"
+  }
+}

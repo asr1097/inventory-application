@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><%- include("head", {title: category.name}) %></head>
+    <body>
+        <%- include("nav") %>
+        <% if(items.length > 0) { %>
+            <ul>
+                <% items.forEach(function(item) { %>
+                    <a href="<%= item.url %>">
+                        <li>
+                            <p><%= item.name %></p>
+                            <p><%= item.price %></p>
+                        </li>
+                    </a>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <h3>Category has no items</h3>
+        <% } %>
+        <a href="<%= category.url %>/create">Create new item</a>
+        <a href="<%= category.url %>/update">Update category</a>
+        <a href="<%= category.url %>/delete">Delete category</a>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><%- include("head", {title: "Delete item"}) %></head>
+    <body>
+        <form action="" method="post">
+            <input type="password" name="password" minlength="1">
+            <input type="submit" value="Delete">
+        </form>
+        <% if(errors) { %>
+            <ul>
+                <% errors.forEach(err => { %>
+                    <li><%= err.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+    </body>
+</html>

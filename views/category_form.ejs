@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><%- include("head", {title: "Create new category"}) %></head>
+    <body>
+        <form action="" method="post">
+            <input type="text" placeholder="Category name" name="name" minlength="1" maxlength="100" required value="<%= category ? category.name : null %>">
+            <textarea name="description" placeholder="Category description" minlength="1" maxlength="100" required><%= category ? category.description : "" %></textarea>
+            <% if(category) { %>
+                <input type="password" name="password" minlength="1">
+            <% } %>
+            <input type="submit" value="Submit">
+        </form>
+        <% if(errors) { %>
+            <ul>
+                <% errors.forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <%})%>
+            </ul>
+        <% } %>
+    </body>
+</html>

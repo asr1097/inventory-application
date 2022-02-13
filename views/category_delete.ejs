@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("head", {title: "Delete category"}) %>
+    </head>
+    <body>
+        <form method="post" action="">
+            <p>Delete category?<br>All items will be deleted too.</p>
+            <input type="password" name="password" minlength="1">
+            <input type="submit" value="Delete">
+        </form>
+        <% if(errors) { %>
+            <ul>
+                <% errors.forEach(err => { %>
+                    <li><%= err.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+    </body>
+</html>

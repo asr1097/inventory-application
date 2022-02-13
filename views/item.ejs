@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("head", {title: item.name}) %>
+    </head>
+    <body>
+        <main>
+            <h4><%= item.name %></h4>
+            <p><%= item.description %></p>
+            <p><%= item.price %></p>
+            <p><%= item.number_in_stock %></p>
+            <img src="<%= file %>" alt="Item">
+        </main>
+        <a href="<%= item.url %>/update">Update item</a>
+        <a href="<%= item.url %>/delete">Delete item</a>
+    </body>
+</html>

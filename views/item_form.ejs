@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><%- include("head", {title}) %></head>
+    <body>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="text" placeholder="Item name" name="name" minlength="1" maxlength="100" value="<%= item ? item.name : "" %>" required>
+            <textarea name="description" placeholder="Item description" minlength="1" maxlength="100" required><%= item ? item.description : "" %></textarea>
+            <select name="category">
+                <% categories.forEach(function(cat) { %>
+                    <option selected="<% item && item.category._id.toString() == cat._id.toString() ? "selected" : false %>" value="<%= cat._id %>"><%= cat.name %></option>
+                <% }); %>
+            </select>
+            <input type="number" name="price" min="0" step="0.01" value="<%= item ? item.price : 0 %>">
+            <input type="number" name="number_in_stock" min="0" value="<%= item ? item.number_in_stock : 0 %>">
+            <input type="file" name="file" accept="image/png" value="<%= file ? file : ""%>">
+            <% if(item) { %>
+                <input type="password" name="password" minlength="1">
+            <% } %>
+            <input type="submit" value="Submit">
+        </form>
+        <% if(errors) { %>
+            <ul>
+                <% errors.forEach(function (err){ %>
+                    <li><%= err.msg %></li>
+                <%})%>
+            </ul>
+        <% } %>
+    </body>
+</html>
